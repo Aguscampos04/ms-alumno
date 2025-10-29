@@ -2,7 +2,12 @@ import logging
 import os
 from flask import Flask
 from app.config import config
+from flask_marshmallow import Marshmallow
+from flask_sqlalchemy import SQLAlchemy
 
+
+db = SQLAlchemy()
+ma = Marshmallow()
 
 def create_app() -> Flask:
     """
@@ -15,7 +20,10 @@ def create_app() -> Flask:
     f = config.factory(app_context if app_context else 'development')
     app.config.from_object(f)
     
-    from app.resources import home
+    db.init_app(app)
+    ma.init_app(app)
+    from app.resources import home, alumno_bp
+    app.register_blueprint(alumno_bp, url_prefix='/api/v1/alumno')
     app.register_blueprint(home, url_prefix='/api/v1')
 
     @app.shell_context_processor
