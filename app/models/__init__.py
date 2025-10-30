@@ -1,2 +1,2 @@
-from .alumno import Alumno
 from .tipodocumento import TipoDocumento
+from .alumno import Alumno

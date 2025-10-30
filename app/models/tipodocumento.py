@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from app import db
 
-#TODO cambiar a sigal o nombre de libreta_civica, libreta_enrolamiento, pasaporte
 @dataclass(init=False, repr=True, eq=True)
 class TipoDocumento(db.Model):
     __tablename__ = 'tipodocumentos'

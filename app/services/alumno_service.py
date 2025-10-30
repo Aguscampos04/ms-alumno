@@ -2,7 +2,6 @@ import datetime
 from io import BytesIO
 from app.models import Alumno
 from app.repositories import AlumnoRepository
-from app.services.documentos_office_service import PDFDocument, ODTDocument, DOCXDocument, Document, obtener_tipo_documento
 
 class AlumnoService:
 
@@ -38,22 +37,6 @@ class AlumnoService:
     def borrar_por_id(id: int) -> bool:
         return AlumnoRepository.borrar_por_id(id)
     
-    @staticmethod
-    def generar_certificado_alumno_regular(id: int,tipo: str)-> BytesIO:
-        alumno = AlumnoRepository.buscar_por_id(id)
-        if not alumno:
-            return None
-        
-        context = AlumnoService.__obteneralumno(alumno)
-        documento = obtener_tipo_documento(tipo)
-        if not documento:
-            return None
-        
-        return documento.generar(
-            carpeta='certificado',
-            plantilla='certificado_pdf',
-            context=context
-        )
     
     @staticmethod
     def __obtener_fechaactual():
