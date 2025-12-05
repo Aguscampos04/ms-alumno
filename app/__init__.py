@@ -23,8 +23,9 @@ def create_app() -> Flask:
     db.init_app(app)
     ma.init_app(app)
     
-    from app.resources import home, alumno_bp
+    from app.resources import home, alumno_bp, tipodocumento_bp
     app.register_blueprint(alumno_bp, url_prefix='/api/v1/alumno')
+    app.register_blueprint(tipodocumento_bp, url_prefix='/api/v1/tipodocumento')
     app.register_blueprint(home, url_prefix='/api/v1')
 
     @app.shell_context_processor
