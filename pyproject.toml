@@ -10,6 +10,7 @@ dependencies = [
     "flask-sqlalchemy==3.1.1",
     "granian>=2.6.0",
     "marshmallow==4.0.0",
+    "marshmallow-sqlalchemy>=1.4.2",
     "psycopg2>=2.9.11",
     "pyrefly==0.38.2",
     "python-dotenv==1.1.1",
