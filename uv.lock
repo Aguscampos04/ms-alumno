@@ -269,6 +269,19 @@ wheels = [
 ]
 
 [[package]]
+name = "marshmallow-sqlalchemy"
+version = "1.4.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "marshmallow" },
+    { name = "sqlalchemy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1d/8c/861ed468b99773866d59e315a73a02538f503c99167d24b3b3f1c8e0242c/marshmallow_sqlalchemy-1.4.2.tar.gz", hash = "sha256:6410304bf98ec26ea35f3f9d3cee82e51fd093c434612add32a0bdcdb5668f7c", size = 51428, upload-time = "2025-04-09T23:44:54.734Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/26/62/9d87301c861b9bded849082d5c5d306dcfd0c3c304b7ed70d2151caaa4da/marshmallow_sqlalchemy-1.4.2-py3-none-any.whl", hash = "sha256:65aee301c4601e76a2fdb02764a65c18913afba2a3506a326c625d13ab405b40", size = 16740, upload-time = "2025-04-09T23:44:52.999Z" },
+]
+
+[[package]]
 name = "ms-alumno"
 version = "1.0.0"
 source = { virtual = "." }
@@ -278,6 +291,7 @@ dependencies = [
     { name = "flask-sqlalchemy" },
     { name = "granian" },
     { name = "marshmallow" },
+    { name = "marshmallow-sqlalchemy" },
     { name = "psycopg2" },
     { name = "pyrefly" },
     { name = "python-dotenv" },
@@ -291,6 +305,7 @@ requires-dist = [
     { name = "flask-sqlalchemy", specifier = "==3.1.1" },
     { name = "granian", specifier = ">=2.6.0" },
     { name = "marshmallow", specifier = "==4.0.0" },
+    { name = "marshmallow-sqlalchemy", specifier = ">=1.4.2" },
     { name = "psycopg2", specifier = ">=2.9.11" },
     { name = "pyrefly", specifier = "==0.38.2" },
     { name = "python-dotenv", specifier = "==1.1.1" },
