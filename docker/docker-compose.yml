@@ -15,7 +15,7 @@ services:
             - PASSWORD_DB=${PASSWORD_DB}
             - NAME_DB=${NAME_DB}
         networks:
-            agusred:
+            leared:
                 aliases:
                     - alumnos.universidad.localhost
         labels:
@@ -29,7 +29,7 @@ services:
             - "traefik.http.middlewares.alumnos-service.circuitbreaker.expression=NetworkErrorRatio() > 0.5"
             - "traefik.http.middlewares.alumnos-service.retry.attempts=4"
             - "traefik.http.middlewares.alumnos-service.retry.initialinterval=100ms"            
-            - "traefik.docker.network=agusred"
+            - "traefik.docker.network=leared"
 networks:
-    agusred:
+    leared:
         external: true
